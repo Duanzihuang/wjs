@@ -69,7 +69,51 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    <div class="wjs_banner">
+      <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators" id="indatorsic">
+        </ol>
+      
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" id="inner" role="listbox">
+        </div>
+      
+        <!-- Controls -->
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- 轮播图模板 -->
+    <script type="text/html" id="dotId">
+      <% _.each(model,function(item,i){ %>
+        <li data-target="#carousel-example-generic" data-slide-to="<%=i%>" class="<%=i===0 ? 'active' : ''%>"></li>
+      <%})%>
+    </script>
+    <script type="text/html" id="imgItem">
+      <% _.each(model.list,function(item,i){ %>
+        <div class="item <%=i==0 ? 'active':''%>">
+          <% if (model.isMobile) { %>
+            <a class="img_mobile" href="">
+              <img src="<%=item.img%>" alt="...">
+            </a>
+          <% }  else { %>
+            <a class="img_box" style="background-image:url(<%=item.bg%>)" href="#"></a>
+          <% } %>
+        </div>
+      <%})%>
+    </script>
+
     <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.js"></script>
     <script src="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/js/bootstrap.js"></script>
+    <script src="https://cdn.bootcss.com/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

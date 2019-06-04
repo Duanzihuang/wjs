@@ -249,3 +249,21 @@ fieldset[disabled] .wjs_nav .btn-link:focus {
   color: #ccc;
 }
 
+/*轮播图*/
+.wjs_banner .img_box{
+  display: block;
+  height: 410px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.wjs_banner .img_mobile{
+  width:100%;
+  display: block;
+}
+
+.wjs_banner .img_mobile img{
+  width:100%;
+  display: block;
+}
